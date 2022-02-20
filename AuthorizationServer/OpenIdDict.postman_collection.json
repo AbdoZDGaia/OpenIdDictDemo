@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "112418bc-0deb-43f2-926d-f60e10b1ea87",
+		"name": "OpenIdDict",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Access Token (Auth Code PKCE)",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "useBrowser",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://oauth.pstmn.io/v1/callback",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "state",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "postman-secret",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "postman",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://localhost:7154/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://localhost:7154/connect/authorize",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code_with_pkce",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "Some Token",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://localhost:7154/connect/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7154",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access Token (Client Credentials)",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://oauth.pstmn.io/v1/callback",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "state",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "postman-secret",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "postman",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://localhost:7154/connect/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://localhost:7154/connect/authorize",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "Some Token",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
