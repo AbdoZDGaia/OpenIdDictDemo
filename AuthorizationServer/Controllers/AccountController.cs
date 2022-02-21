@@ -1,8 +1,10 @@
-﻿using AuthorizationServer.ViewModels;
+﻿using AuthorizationServer.Helpers;
+using AuthorizationServer.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Okta.AspNetCore;
 using System.Security.Claims;
 
 namespace AuthorizationServer.Controllers
@@ -15,6 +17,17 @@ namespace AuthorizationServer.Controllers
         {
             ViewData["ReturnUrl"] = returnUrl;
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult OktaSignIn()
+        {
+            if (!HttpContext.User.Identity.IsAuthenticated)
+            {
+                return Challenge(OktaDefaults.MvcAuthenticationScheme);
+            }
+            var claims = HttpContext.User.Claims;
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]

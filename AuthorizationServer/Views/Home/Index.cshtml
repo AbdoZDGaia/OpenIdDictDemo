@@ -1,4 +1,8 @@
-﻿@using Microsoft.AspNetCore.Authentication
+﻿@using AuthorizationServer.Controllers
+@using Microsoft.AspNetCore.Authentication
+@using System.Security.Claims
+@using System.IdentityModel.Tokens.Jwt
+@model JwtSecurityToken
 
 @if (User.Identity.IsAuthenticated)
 {
@@ -8,14 +12,21 @@
     <div>
         <p>You are signed in as</p>
         <h2>@User.Identity.Name</h2>
-        <hr/>
+        <hr />
         <dl>
             <dt>Issued</dt>
             <dd>@issued</dd>
             <dt>Expires</dt>
             <dd>@expires</dd>
+            @foreach (var claim in ((ClaimsIdentity)User.Identity).Claims)
+            {
+                <dt title="@claim.Type">@claim.Type</dt>
+                <dd>@claim.Value</dd>
+            }
+            <dt title="Verified JWT Token">Verified JWT Token</dt>
+            <dd>@(Model is null? "": Model.ToString())</dd>
         </dl>
-        <hr/>
+        <hr />
         <p><a class="btn btn-dark" asp-controller="Account" asp-action="Logout">Sign out</a></p>
     </div>
 }
@@ -25,5 +36,6 @@
     <div>
         <p>You are not signed in</p>
         <p><a class="btn btn-sm btn-dark" asp-controller="Account" asp-action="Login">Sign in</a></p>
+        <a asp-controller="Account" asp-action=@nameof(AccountController.OktaSignIn)>Sign In</a>
     </div>
 }

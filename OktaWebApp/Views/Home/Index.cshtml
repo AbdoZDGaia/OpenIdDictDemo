@@ -1,0 +1,13 @@
+﻿@using System.Security.Claims
+@{
+    ViewData["Title"] = "Home Page";
+}
+@foreach (var claim in ((ClaimsIdentity)User.Identity).Claims)
+{
+    <dt title="@claim.Type">@claim.Type</dt>
+    <dd>@claim.Value</dd>
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

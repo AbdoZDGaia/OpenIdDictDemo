@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenIdDictDemo", "OpenIdDictDemo\OpenIdDictDemo.csproj", "{57155D58-B18E-4D45-BFD6-C9A8C8E7BC5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenIdDictDemo", "OpenIdDictDemo\OpenIdDictDemo.csproj", "{57155D58-B18E-4D45-BFD6-C9A8C8E7BC5C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizationServer", "AuthorizationServer\AuthorizationServer.csproj", "{FD9ED42B-8E13-484A-9AC5-8640A258BA95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Okta", "Okta", "{284676F9-C601-4BEF-8194-8F9AAAE7A920}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenIdDict", "OpenIdDict", "{BFD76979-6A70-4FB9-A4D3-D0D51FFDCE75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OktaWebApp", "OktaWebApp\OktaWebApp.csproj", "{4BFCDE1E-A5CA-411C-A52C-8433784DBCA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +27,18 @@ Global
 		{FD9ED42B-8E13-484A-9AC5-8640A258BA95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD9ED42B-8E13-484A-9AC5-8640A258BA95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD9ED42B-8E13-484A-9AC5-8640A258BA95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BFCDE1E-A5CA-411C-A52C-8433784DBCA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BFCDE1E-A5CA-411C-A52C-8433784DBCA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BFCDE1E-A5CA-411C-A52C-8433784DBCA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BFCDE1E-A5CA-411C-A52C-8433784DBCA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{57155D58-B18E-4D45-BFD6-C9A8C8E7BC5C} = {BFD76979-6A70-4FB9-A4D3-D0D51FFDCE75}
+		{FD9ED42B-8E13-484A-9AC5-8640A258BA95} = {BFD76979-6A70-4FB9-A4D3-D0D51FFDCE75}
+		{4BFCDE1E-A5CA-411C-A52C-8433784DBCA9} = {284676F9-C601-4BEF-8194-8F9AAAE7A920}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6323926E-CD93-4236-89E9-2149AD9051EB}
